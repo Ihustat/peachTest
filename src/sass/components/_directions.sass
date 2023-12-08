@@ -1,0 +1,36 @@
+.directions
+    &__title
+        text-align: center
+        margin-bottom: 55px
+    &__items
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax( calc(50% - 20px) ,1fr))
+        gap: 20px
+    &__item
+        min-height: 260px
+        position: relative
+        color: #fff
+        width: 100%
+        overflow: hidden
+        &:hover .directions__item-box
+            transform: translateY(0)
+    &__item-box
+        padding: 28px 115px 0 20px
+        transform: translateY(calc(260px - 80px))
+        height: 100%
+        background-color: rgba(45, 54, 83, .6 )
+        transition: all .3s
+    &__item-title
+        margin-bottom: 20px
+        font-size: 24px
+        font-weight: 600
+    &__item-descr
+        font-size: 17px
+        line-height: 140%
+        max-width: 480px
+    &__item-img
+        position: absolute
+        z-index: -1
+        object-fit: cover
+        height: 100%
+        width: 100%

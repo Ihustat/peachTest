@@ -1,0 +1,30 @@
+.mission
+    padding: 140px 0
+    position: relative
+    text-align: center
+    background-color: $second-color
+    color: #fff
+    &::before
+        content: ''
+        position: absolute
+        background-image: url('../images/mission/mission-left.png')
+        background-repeat: no-repeat
+        top: 11%
+        left: 0
+        height: 100%
+        width: 27.84%
+    &::after
+        content: ''
+        position: absolute
+        background-image: url('../images/mission/mission-right.png')
+        background-repeat: no-repeat
+        top: 11%
+        right: 0
+        height: 100%
+        width: 14.84%
+    &__title
+        margin-bottom: 40px
+    &__text
+        font-size: 32px
+        font-weight: 400
+        line-height: 150%
