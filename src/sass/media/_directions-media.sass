@@ -4,6 +4,10 @@
     .directions__item
         margin-bottom: 10px
         height: 60px
+        transition: all .3s
+        &_active
+            height: 240px
+            transition: all .3s
     .directions__item-box
         position: relative
         padding: 20px 15px
@@ -13,7 +17,10 @@
         position: absolute
         top: 11px
         right: 0
+        transition: all .3s
     .directions__item-title
         font-size: 20px
         line-height: 100%
         margin-bottom: 17px
+    .directions__item_active .arrow-down
+        transform: rotate(180deg)

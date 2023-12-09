@@ -4,6 +4,7 @@ import "../sass/main.sass";
 import "../index.html";
 
 import Slider from "./modules/slider";
+import Accordeon from "./modules/accorderon";
 
 ("use strict");
 
@@ -17,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".slider__main"
   );
   slider.initSlider();
+
+  new Accordeon(".directions__item").init();
 
   window.addEventListener("resize", () => {
     slider.initSlider();
