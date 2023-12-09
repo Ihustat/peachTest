@@ -10,13 +10,13 @@
     .map__top
         padding: 18px 5px 0
         display: block
-        width: 200%
+        width: 120%
         gap: 16px
 
     .map__top-item
-        pb21
+        padding-bottom: 21px
         font-size: 14px
-        &:nth-child(4),  &:nth-child(:last-child)
+        &:nth-child(4)
             min-width: 81px
 
     .map__arrow-down
@@ -46,11 +46,28 @@
         position: relative
 
     .select-block__item-triangle
+        display: inline-block
         transform: translate(3px, 5px)
         transition: all .3s
+
+    .select-block__item_dropdown .select-block__item-triangle
+        transform: rotate(180deg) translate(-3px, -5px)
 
     .select-block__item:not(:first-child)
         display: none
 
-    .select-block__item_dropdown .select-block__item-triangle
-        transform: rotate(180deg) translate(-3px, -5px)
+@media screen and ( max-width: 426px )
+    .map__top
+        width: 220%
+
+@media screen and ( max-width: 376px )
+    .map__top
+        width: 240%
+    .map__select-block
+        width: 45%
+
+@media screen and ( max-width: 321px )
+    .map__top
+        width: 280%
+    .map__select-block
+        width: 35%

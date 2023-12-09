@@ -5,12 +5,8 @@ class Accordeon {
 
   init() {
     this.items.forEach((item) => {
-      item.addEventListener("click", (e) => {
-        const target = e.target;
-
-        if (target && target.classList.contains("arrow-down")) {
-          item.classList.toggle("directions__item_active");
-        }
+      item.addEventListener("click", () => {
+        item.classList.toggle("directions__item_active");
       });
     });
   }

@@ -51,6 +51,9 @@ class Map {
     const regionAttr = e.target.getAttribute("data-region");
 
     if (target && target.classList.contains(className)) {
+      if (document.documentElement.clientWidth > 1100 || isCity)
+        this.main.classList.remove("map__top_active");
+
       this.regions.forEach((region) => {
         region.classList.remove("map__top-item_active");
         if (region.getAttribute("data-region") === regionAttr)
@@ -63,17 +66,22 @@ class Map {
           region.classList.add("select-block__item_active");
       });
 
+      const cities = Array.from(this.selectItems).filter((item) =>
+        item.getAttribute("data-city")
+      );
+
+      cities.forEach((city) => {
+        city.classList.remove("select-block__item_active");
+      });
+
       if (isCity) {
-        Array.from(this.selectItems)
-          .filter((item) => item.getAttribute("data-city"))
-          .forEach((city) => {
-            city.classList.remove("select-block__item_active");
-            if (
-              city.getAttribute("data-city") ===
-              e.target.getAttribute("data-city")
-            )
-              city.classList.add("select-block__item_active");
-          });
+        cities.forEach((city) => {
+          if (
+            city.getAttribute("data-city") ===
+            e.target.getAttribute("data-city")
+          )
+            city.classList.add("select-block__item_active");
+        });
       }
 
       this.showCities(
