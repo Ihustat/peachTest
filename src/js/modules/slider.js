@@ -16,12 +16,13 @@ class Slider {
     this.dotsContainer = document.querySelector(dotsContainer);
     this.sliderWrapper = document.querySelector(sliderWrapper);
     this.sliderMain = document.querySelector(sliderMain);
-    this.sliderWrapper.style.width = `${this.countWrapperWidth()}px`;
-    this.dots = [];
   }
 
   countWrapperWidth() {
     this.width = parseInt(window.getComputedStyle(this.sliderMain).width);
+    this.slides.forEach((slide) => {
+      slide.style.maxWidth = `${this.width}px`;
+    });
 
     return this.width * this.slides.length;
   }
@@ -60,8 +61,18 @@ class Slider {
     }px)`;
   }
 
-  initSlider() {
+  setInitial() {
+    this.sliderWrapper.style.width = `${this.countWrapperWidth()}px`;
+    this.dots = [];
+    this.dotsContainer.innerHTML = "";
+    if (this.sliderInterval) clearInterval(this.sliderInterval);
     this.createDots();
+    this.changeSlide();
+  }
+
+  initSlider() {
+    this.setInitial();
+
     this.nxtBtn.addEventListener("click", () => {
       this.changeSlide(1);
     });
@@ -77,6 +88,12 @@ class Slider {
         this.changeSlide();
       }
     });
+
+    if (document.documentElement.clientWidth < 591) {
+      this.sliderInterval = setInterval(() => {
+        this.changeSlide(1);
+      }, 3000);
+    }
   }
 }
 

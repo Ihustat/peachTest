@@ -8,12 +8,17 @@ import Slider from "./modules/slider";
 ("use strict");
 
 document.addEventListener("DOMContentLoaded", () => {
-  new Slider(
+  const slider = new Slider(
     ".slider__prev",
     ".slider__next",
     ".slider__img",
     ".slider__dots",
     ".slider__wrapper",
     ".slider__main"
-  ).initSlider();
+  );
+  slider.initSlider();
+
+  window.addEventListener("resize", () => {
+    slider.initSlider();
+  });
 });
