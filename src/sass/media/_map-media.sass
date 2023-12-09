@@ -1,0 +1,56 @@
+@media screen and ( max-width: 1100px )
+    .map
+        overflow-x: scroll
+        &::-webkit-scrollbar
+            display: none
+        &::-webkit-scrollbar-thumb
+            display: none
+            display: none
+
+    .map__top
+        padding: 18px 5px 0
+        display: block
+        width: 200%
+        gap: 16px
+
+    .map__top-item
+        pb21
+        font-size: 14px
+        &:nth-child(4),  &:nth-child(:last-child)
+            min-width: 81px
+
+    .map__arrow-down
+        right: auto
+        left: 160px
+
+    .map__img-wrapper
+        min-width: 862px
+
+    .map__select-block
+        width: 50%
+        padding: 18px 5px
+        flex-wrap: wrap
+        justify-content: start
+        top: 53px
+        gap: 0px
+        box-shadow: none
+
+    .map .select-block__items
+        min-width: 33%
+        gap: 0
+
+    .map .select-block__item
+        font-size: 14px
+        line-height: 14px
+        margin-bottom: 15px
+        position: relative
+
+    .select-block__item-triangle
+        transform: translate(3px, 5px)
+        transition: all .3s
+
+    .select-block__item:not(:first-child)
+        display: none
+
+    .select-block__item_dropdown .select-block__item-triangle
+        transform: rotate(180deg) translate(-3px, -5px)

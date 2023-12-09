@@ -1,0 +1,182 @@
+.map
+    &__top
+        position: relative
+        margin-bottom: 90px
+        padding: 28px 70px 0
+        display: flex
+        justify-content: space-between
+        align-items: center
+        box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.06)
+        font-weight: 600
+        background-color: #fff
+    &__top-select
+        padding-bottom: 28px
+        font-size: 24px
+        position: relative
+        background-color: #fff
+    &__arrow-down
+        position: absolute
+        top: 6px
+        right: -32px
+        cursor: pointer
+        transition: all .3s
+    &__top-items
+        display: flex
+        gap: 30px
+    &__top-item
+        padding-bottom: 28px
+        font-size: 18px
+        line-height: 20px
+        cursor: pointer
+        &_active
+            color: $second-color
+            border-bottom: 3px solid $second-color
+    &__select-block
+        position: absolute
+        top: 106px
+        left: 0
+        right: 0
+        z-index: 5
+
+        padding: 30px 68.5px
+
+        display: flex
+        gap: 24px
+        justify-content: space-between
+        align-items: start
+
+        background-color: #fff
+        box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.06)
+
+        opacity: 0
+        transition: all .3s
+    .select-block__items
+        display: flex
+        flex-direction: column
+        gap: 15px
+    .select-block__item
+        font-size: 18px
+        line-height: 20px
+        cursor: pointer
+        font-weight: 400
+        cursor: pointer
+        &_active
+            color: $second-color
+        &:first-child
+            font-weight: 600
+
+.map__top_active
+    .map__arrow-down
+        transform: rotate(-180deg)
+    .map__top-items
+        opacity: .2
+    .map__select-block
+        opacity: 1
+
+.map__top_active ~ .map__img-wrapper
+    opacity: .2
+
+.map__img-wrapper
+    position: relative
+
+.map__dot
+    position: absolute
+    font-size: 12px
+    line-height: 100%
+    &::before
+        content: ''
+        position: absolute
+        top: -8px
+        left: 50%
+        transform: translateX(-50%)
+        width: 8px
+        height: 8px
+        border-radius: 100%
+        background-color: $text-color
+
+.map__dot_bot
+    &::before
+        top: auto
+        bottom: -8px
+
+.map__dot[data-city="kalinin"]
+    top: 21%
+    left: 1.5%
+.map__dot[data-city="sp"]
+    top: 22%
+    left: 9.5%
+.map__dot[data-city="yaros"]
+    top: 34%
+    left: 12.5%
+.map__dot[data-city="moskow"]
+    top: 38%
+    left: 10.5%
+.map__dot[data-city="voronezh"]
+    top: 41%
+    left: 6.5%
+.map__dot[data-city="belgorod"]
+    top: 47%
+    left: 6.5%
+.map__dot[data-city="rostov"]
+    bottom: 43%
+    left: 4.5%
+.map__dot[data-city="volgograd"]
+    bottom: 39%
+    left: 7.5%
+.map__dot[data-city="krd"]
+    bottom: 34%
+    left: 3.5%
+.map__dot[data-city="nn"]
+    bottom: 54%
+    left: 12.5%
+.map__dot[data-city="samara"]
+    bottom: 45%
+    left: 14.5%
+.map__dot[data-city="kazan"]
+    bottom: 48%
+    left: 18.5%
+.map__dot[data-city="orenburg"]
+    bottom: 36%
+    left: 16.5%
+.map__dot[data-city="ufa"]
+    bottom: 40%
+    left: 20.5%
+.map__dot[data-city="izhevsk"]
+    bottom: 48%
+    left: 24.5%
+.map__dot[data-city="ekb"]
+    bottom: 43%
+    left: 22.5%
+.map__dot[data-city="chelyab"]
+    bottom: 36%
+    left: 23.5%
+.map__dot[data-city="perm"]
+    bottom: 45%
+    left: 28.5%
+.map__dot[data-city="surgut"]
+    bottom: 44%
+    left: 33.5%
+.map__dot[data-city="tyumen"]
+    bottom: 35%
+    left: 31.5%
+.map__dot[data-city="novosib"]
+    bottom: 22%
+    right: 57%
+.map__dot[data-city="omsk"]
+    bottom: 19%
+    right: 62%
+.map__dot[data-city="tomsk"]
+    bottom: 22%
+    right: 53%
+.map__dot[data-city="krasnoya"]
+    bottom: 21%
+    right: 47%
+.map__dot[data-city="irkutsk"]
+    bottom: 14%
+    right: 43%
+.map__dot[data-city="habar"]
+    bottom: 14%
+    right: 19%
+.map__dot[data-city="vladivostok"]
+    bottom: 1%
+    right: 19%
